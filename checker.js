@@ -40,11 +40,11 @@ Papa.parse(csvFile, {
     header: true,
     complete: function(results) {
         results.data.forEach(row => {
-            if (row.Address) {
-                data[row.Address.toLowerCase()] = {
+            if (row.Line) {
+                data[row.Line.toLowerCase()] = {
                     sybil: true,
-                    cluster: row.Cluster,
-                    source: row.Source
+                    cluster: row['File Name'],
+                    source: row['Folder Name']
                 }
             }
         })
